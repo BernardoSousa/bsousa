@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernardo Sousa - Fullstack Developer</title>
+    <meta name="description" content="Professional Portfolio and CV of a Senior Frontend Developer">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <!-- DaisyUI 5 & Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css"/>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Print optimization */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                background-color: white;
+                color: black;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                background: white !important;
+            }
+
+            .hero {
+                min-height: auto !important;
+                padding-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class=" text-base-content min-h-screen flex flex-col relative">
+
+<div class="px-42 navbar bg-base-100/90 backdrop-blur-md fixed top-0 z-50 shadow-sm no-print">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
+                </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+        <a href="#" class="text-xl font-bold tracking-tight">Bernardo Sousa</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 font-medium">
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#education" data-i18n="nav.projects">Education</a></li>
+        </ul>
+    </div>
+    <div class="navbar-end gap-2">
+        <a href="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex" data-i18n="nav.hire">Contact Me</a>
+    </div>
+</div>
+
+<div id="about" class="hero min-h-[90vh] pt-16">
+    <div class="hero-content flex-col lg:flex-row-reverse gap-10">
+
+        <div class="avatar placeholder">
+            <div class="bg-neutral text-neutral-content rounded-full w-64 shadow-2xl ring ring-primary ring-offset-base-100 ring-offset-2">
+                <!-- TODO take a picture -->
+                <img src="" alt="Bernardo"/>
+            </div>
+        </div>
+
+        <div class="max-w-2xl text-center lg:text-left">
+            <h1 class="text-5xl font-bold leading-tight">
+                <span data-i18n="hero.greeting">Hi, I'm Bernardo</span><br>
+                <span class="text-primary" data-i18n="hero.role">Fullstack Developer</span>
+            </h1>
+            <p class="pr-6 py-6 text-lg text-base-content/80 justify" data-i18n="hero.description">
+                I build scalable, high-performance web applications with modern technologies, focusing on clean code and
+                great user experiences.
+            </p>
+            <div class="flex gap-4 justify-center lg:justify-start">
+                <a href="assets/Bernardo%20Sousa%20CV.pdf" target="_blank">
+                    <button class="btn btn-primary" data-i18n="hero.download">Download CV</button>
+                </a>
+
+                <a href="#projects" class="btn btn-outline" data-i18n="hero.projects">View Projects</a>
+            </div>
+
+            <div class="mt-8 flex gap-6 justify-center lg:justify-start text-base-content/60">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                    <span data-i18n="hero.location">São Miguel, Azores</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <span>bernardo@bsousa.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="skills" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12" data-i18n="skills.title">Technical Expertise</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-xl border border-base-200">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                        <span data-i18n="skills.core">Core Stack</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <div class="badge badge-outline badge-primary badge-lg">PHP</div>
+                        <div class="badge badge-outline badge-primary badge-lg">JavaScript</div>
+                        <div class="badge badge-outline badge-primary badge-lg">SQL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-200">
+                <div class="card-body">
+                    <h3 class="card-title text-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                        <span data-i18n="skills.frameworks">Frameworks & Libs</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <div class="badge badge-outline badge-info badge-lg">Symfony</div>
+                        <div class="badge badge-outline badge-info badge-lg">Twig</div>
+                        <div class="badge badge-outline badge-info badge-lg">Stimulus</div>
+                        <div class="badge badge-outline badge-info badge-lg">Tailwind CSS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-200">
+                <div class="card-body">
+                    <h3 class="card-title text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span data-i18n="skills.tools">Tools & DevOps</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <div class="badge badge-outline badge-accent badge-lg">Git</div>
+                        <div class="badge badge-outline badge-accent badge-lg">Docker</div>
+                        <div class="badge badge-outline badge-accent badge-lg">FrankenPHP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="py-20 ">
+    <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16" data-i18n="exp.title">Work Experience</h2>
+
+        <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+
+            <li>
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                         class="h-5 w-5 text-primary">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="timeline-start md:text-end mb-10">
+                    <time class="font-mono italic text-sm text-base-content/60" data-i18n="exp.job1.time">2022 -
+                        Present
+                    </time>
+                    <div class="text-lg font-black mt-1" data-i18n="exp.job1.role">Web Developer</div>
+                    <div class="text-sm font-bold text-primary mb-2">Tetrapi Creative Solutions</div>
+                    <p class="text-base-content/80 text-sm" data-i18n="exp.job1.desc">
+                        Led and developed scalable web applications for public and private clients, contributed to
+                        government platforms, and mentored university trainees and new team members.
+                    </p>
+                </div>
+                <hr class="bg-primary"/>
+            </li>
+
+            <li>
+                <hr class="bg-primary"/>
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                         class="h-5 w-5 text-primary">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="timeline-end mb-10">
+                    <time class="font-mono italic text-sm text-base-content/60" data-i18n="exp.job2.time">2019 - 2022
+                    </time>
+                    <div class="text-lg font-black mt-1" data-i18n="exp.job2.role">Software Developer <span
+                            class="badge badge-soft badge-primary badge-sm">Internship</span></div>
+                    <div class="text-sm font-bold text-secondary mb-2">Azores Hive, Lda</div>
+                    <p class="text-base-content/80 text-sm" data-i18n="exp.job2.desc">
+                        Developed a microservice for management and synchronization of employee, company, and business
+                        units
+                        data of Grupo Bensaude.
+                    </p>
+                </div>
+                <hr class="bg-primary"/>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="projects" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12" data-i18n="projects.title">Featured Projects</h2>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 w-full md:w-96">
+                <figure class="bg-neutral text-neutral-content h-48 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 opacity-50" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">EmpregoAçores</h2>
+                    <p class="text-sm text-base-content/70 justify" data-i18n="projects.p2.desc">A regional job portal
+                        designed
+                        to connect employers and job seekers across the Azores through a simple, intuitive and efficient
+                        recruitment platform.</p>
+                    <div class="card-actions justify-start mt-4">
+                        <div class="badge badge-outline badge-info text-xs">Symfony</div>
+                        <div class="badge badge-outline badge-info text-xs">Stimulus</div>
+                        <div class="badge badge-outline badge-info text-xs">PostgreSQL</div>
+                        <div class="badge badge-outline badge-accent text-xs">FrankenPHP</div>
+                    </div>
+                    <div class="card-actions justify-end mt-4 w-full">
+                        <a href="https://empregoacores.pt" target="_blank"
+                           class="btn btn-outline btn-primary btn-sm w-full" data-i18n="projects.liveDemo">Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-12">
+    <div id="education" class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-10" data-i18n="edu.title">Education</h2>
+        <div class="flex flex-col gap-4">
+            <div class="alert bg-base-100 shadow-sm border-l-4 border-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     class="stroke-primary shrink-0 w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                </svg>
+                <div>
+                    <h3 class="font-bold" data-i18n="edu.degree">Bachelor in Informatics</h3>
+                    <div class="text-xs" data-i18n="edu.school1">University of the Azores • 2019 - 2023</div>
+                </div>
+            </div>
+            <div class="alert bg-base-100 shadow-sm border-l-4 border-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     class="stroke-secondary shrink-0 w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <div>
+                    <h3 class="font-bold" data-i18n="edu.cert">Secondary School of Lagoa</h3>
+                    <div class="text-xs" data-i18n="edu.school2">Information Systems Management and Programming
+                        Technician • 2013 -2018
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 px-4">
+    <div class="hero">
+        <div class="hero-content text-center">
+            <div>
+                <h1 class="text-5xl font-bold" data-i18n="contact.title">Get in Touch</h1>
+                <p class="py-6 text-lg" data-i18n="contact.desc">
+                    Feel free to reach out via email or connect with me on LinkedIn.
+                </p>
+                <div class="flex flex-col gap-4 items-center justify-center">
+                    <a href="mailto:bernardo@bsousa.pt"
+                       class="link link-primary flex items-center gap-3">
+                            <span class="btn btn-circle btn-sm btn-primary btn-outline no-animation pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                     fill="currentColor"><path
+                                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path
+                                        d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                            </span>
+                        <span>bernardo@bsousa.pt</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bernardocsousa/" target="_blank"
+                       class="link link-primary flex items-center gap-3">
+                            <span class="btn btn-circle btn-sm btn-primary btn-outline no-animation pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                     fill="currentColor"><path fill-rule="evenodd"
+                                                               d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.337 7.433c-1.281 0-2.136-1.071-2.136-2.138 0-.918.721-2.138 2.136-2.138 1.278 0 2.136 1.077 2.136 2.138 0 1.068-.862 2.138-2.136 2.138zm1.549 8.905H3.788v-8.59h3.099v8.59zM20 1H4a3 3 0 00-3 3v16a3 3 0 003 3h16a3 3 0 003-3V4a3 3 0 00-3-3z"
+                                                               clip-rule="evenodd"/></svg>
+                            </span>
+                        <span>https://www.linkedin.com/in/bernardocsousa/</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
